@@ -14,13 +14,13 @@
                                id="inputProductName" 
                                type="text" 
                                placeholder="Product Name (required)" 
-                               required
                                ng-minlength="4"
                                ng-maxlength="12"
-                               ng-model="product.newProduct.productName"/>
+                               ng-model="product.newProduct.productName"
+                               required/>
                     </div>
                     <span class="help-block has-error">
-                        <span ng-show="newSaleForm.inputProductName.$error.required ">
+                        <span ng-show="newSaleForm.inputProductName.$error.required">
                             Product name is required.
                         </span>
                           <span ng-show="newSaleForm.inputProductName.$error.minlength"> 
@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">Product Image</label>
-                    <div class="col-md-2 control-label">
+                    <div class="col-md-4">
                         <input class="form-control" type="text" id="inputProductImage" name="inputProductImage" placeholder="Paste a url to image" required  ng-model="product.newProduct.productImage"/>
                     </div>
                     <span></span>
@@ -45,13 +45,7 @@
                     </div>
                     <span></span>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-2 control-label">Description</label>
-                    <div class="col-md-4">
-                        <textarea class="form-control"  id="inputProductDescription" name="inputProductDescription" placeholder="Description" ng-model="product.newProduct.productDescription" ></textarea>
-                    </div>
-                    <span></span>
-                </div>
+               
                 <div class="form-group">
                     <label class="col-md-2 control-label">Starting Price</label>
                     <div class="col-md-4">
@@ -62,14 +56,71 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label">Bid Start DateTime</label>
                     <div class="col-md-4">
-                        <input class="form-control" type="date" id="inputBidStartDateTime" name="inputBidStartDateTime" placeholder="current time" required ng-model="product.newProduct.bidStartTime"/>
+                        <div class="input-group">
+                        <input class="form-control" 
+                               type="text" 
+                               id="inputBidStartDateTime"   required 
+                               ng-model="product.newProduct.bidStartTime"
+                               uib-datepicker-popup="MMM dd, yyyy" 
+                               is-open="product.startDatePopUp"/>
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" 
+                                    ng-click="product.openStartDate($event)">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </button>
+                            </span>
+                        </div>
                     </div>
-                    <span></span>
                 </div>
+<!--
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Bid Start EndTime</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                        <input class="form-control" type="text" id="inputBidEndDateTime" name="inputBidEndDateTime"  required 
+                               ng-model="product.newProduct.bidStartTime"
+                               datepicker-popup="MMM dd, yyyy" is-open="product.opened"/>
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" ng-click="product.open($event)">
+                                <i class="glyphicon glyphicon-calendar"/></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+-->
+<!--
                 <div class="form-group">
                     <label class="col-md-2 control-label">Bid End DateTime</label>
                     <div class="col-md-4">
                         <input class="form-control" type="date" id="inputBidEndDateTime" name="inputBidEndDateTime" placeholder="bid end time" required ng-model="product.newProduct.bidEndTime"/>
+                    </div>
+                    <span></span>
+                </div>
+-->
+                 <div class="form-group">
+                    <label class="col-md-2 control-label">Bid End DateTime</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                        <input class="form-control" 
+                               type="text" 
+                               id="inputBidEndDateTime"   required 
+                               ng-model="product.newProduct.bidEndTime"
+                               uib-datepicker-popup="MMM dd, yyyy" 
+                               is-open="product.endDatePopUp"/>
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" 
+                                    ng-click="product.openEndDate($event)">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="form-group">
+                    <label class="col-md-2 control-label">Description</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control"  id="inputProductDescription" name="inputProductDescription" placeholder="Description" ng-model="product.newProduct.productDescription" rows="3" ></textarea>
                     </div>
                     <span></span>
                 </div>

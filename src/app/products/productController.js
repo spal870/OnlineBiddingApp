@@ -17,6 +17,18 @@
           vm.reset=function(){
               vm.newProduct={};
           }
+          vm.openStartDate = function ($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+
+            vm.startDatePopUp = !vm.startDatePopUp;
+        };
+            vm.openEndDate = function ($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+
+            vm.endDatePopUp = !vm.endDatePopUp;
+        };
         }
          
     }
