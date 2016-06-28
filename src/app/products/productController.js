@@ -11,9 +11,12 @@
         function activate() {
             
             
-          vm.createNewsale= function (){
-                productService.createNewSale(vm.product);
+          vm.createNewsale= function (newProduct){
+                productService.createNewSale(newProduct);
             }
+          vm.reset=function(){
+              vm.newProduct={};
+          }
         }
          
     }
