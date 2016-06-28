@@ -1,0 +1,91 @@
+<div class="container">
+    <div>
+        <acme-navbar></acme-navbar>
+    </div>
+    <div class="jumbotron">
+        <form name="newSaleForm" class="form-horizontal" novalidate>
+            <fieldset>
+                <legend>Add Product </legend>
+                <div class="form-group" ng-class="{'has-error':newSaleForm.inputProductName.$dirty &&         newSaleForm.inputProductName.$invalid}">
+                    <label class="col-md-2 control-label" for="inputProductName">Product Name</label>
+                    <div class="col-md-4">
+                        <input class="form-control"
+                               name="inputProductName" 
+                               id="inputProductName" 
+                               type="text" 
+                               placeholder="Product Name (required)" 
+                               required
+                               ng-minlength="4"
+                               ng-maxlength="12"
+                               ng-model="vm.product.productName"/>
+                    </div>
+                    <span class="help-block has-error">
+                        <span ng-show="newSaleForm.inputProductName.$error.required ">
+                            Product name is required.
+                        </span>
+                          <span ng-show="newSaleForm.inputProductName.$error.minlength"> 
+                              Product name must be at least 4 characters in length.
+                        </span>
+                          <span ng-show="newSaleForm.inputProductName.$error.maxlength"> 
+                              Product name cannot exceed 12 characters in length.
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Product Image</label>
+                    <div class="col-md-2 control-label">
+                        <input class="form-control" type="text" id="inputProductImage" name="inputProductImage" placeholder="Paste a url to image" required  ng-model="vm.product.productImage"/>
+                    </div>
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Product Type</label>
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" id="inputProductType" name="inputProductType" placeholder="Mention/Select Product Type" required  ng-model="vm.product.productType"/>
+                    </div>
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Description</label>
+                    <div class="col-md-4">
+                        <textarea class="form-control"  id="inputProductDescription" name="inputProductDescription" placeholder="Description" ></textarea>
+                    </div>
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Starting Price</label>
+                    <div class="col-md-4">
+                        <input class="form-control" type="number" id="inputBidBasePrice" name="inputBidBasePrice" placeholder="0.0" required />
+                    </div>
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Bid Start DateTime</label>
+                    <div class="col-md-4">
+                        <input class="form-control" type="date" id="inputBidStartDateTime" name="inputBidStartDateTime" placeholder="current time" required />
+                    </div>
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Bid End DateTime</label>
+                    <div class="col-md-4">
+                        <input class="form-control" type="date" id="inputBidEndDateTime" name="inputBidEndDateTime" placeholder="bid end time" required />
+                    </div>
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4 col-md-offset-2">
+                        <span>
+                        <button class="btn btn-primary" style="width:80px;margin-right:10px" ng-click="product.createNewsale()">Create</button>
+                        </span>
+                        <span>
+                        <button class="btn btn-default"
+                                style="width:70px">Clear</button>
+                        </span>
+                    </div>
+                </div>
+            </fieldset>
+
+        </form>
+    </div>
+</div>
