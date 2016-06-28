@@ -34,7 +34,15 @@
         }
         
         function createNewSale(newProduct){
-            return $http.post(apiHost+"",newProduct).then(function(response){
+            var newSale={
+                name:newProduct.productName,
+                description:newProduct.productDescription,
+                imageURL:newProduct.productImage,
+                startPrice:newProduct.productPrice,
+                startTime:newProduct.bidStartTime,
+                endTime:newProduct.bidEndTime
+            };
+            return $http.post("http://10.209.18.233:9001/sales",JSON.stringify(newSale)).then(function(response){
                 debugger;
                 console.log("new sale created");
             })
