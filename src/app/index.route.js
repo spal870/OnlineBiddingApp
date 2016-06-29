@@ -9,7 +9,7 @@
     function routerConfig($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('home', {
-                url: '/'
+                url: '/home'
                 , templateUrl: 'app/main/main.html'
                 , controller: 'MainController'
                 , controllerAs: 'main'
@@ -18,6 +18,16 @@
                 , templateUrl: 'app/about/about.html'
                 , controller: 'AboutController'
                 , controllerAs: 'about'
+            }).state('login', {
+                url : '/',
+                templateUrl  : 'app/login/login.html',
+                controller   : 'LoginController',
+                controllerAs : 'vm'
+            }).state('register', {
+                url : '/register',
+                templateUrl  : 'app/register/register.html',
+                controller   : 'RegisterController',
+                controllerAs : 'vm'
             }).state('addNewSale', {
                 url: '/newSale'
                 , templateUrl: 'app/products/addNewSaleForm.html'
