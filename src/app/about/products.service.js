@@ -20,7 +20,7 @@
 
         function getProducts() {
 
-            return $http.get("http://10.209.18.233:9001/sales")
+            return $http.get("http://10.209.41.33/AuctionWebApi/api/product")
                 .then(getProductsComplete)
                 .catch(getProductsFailed);
 
