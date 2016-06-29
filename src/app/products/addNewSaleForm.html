@@ -63,7 +63,7 @@
                                type="text" 
                                id="inputBidStartDateTime"   required 
                                ng-model="product.newProduct.bidStartTime"
-                               uib-datepicker-popup="MMM dd, yyyy" 
+                               datetime-picker="dd MMM yyyy h:mm" 
                                is-open="product.openDatePickers[0]"/>
                             <span class="input-group-btn">
                             <button class="btn btn-default" 
@@ -88,12 +88,7 @@
                     <label class="col-md-2 control-label">Bid End DateTime</label>
                     <div class="col-md-4">
                         <div class="input-group">
-                        <input class="form-control" 
-                               type="text" 
-                               id="inputBidEndDateTime"   required 
-                               ng-model="product.newProduct.bidEndTime"
-                               uib-datepicker-popup="MMM dd, yyyy" 
-                               is-open="product.openDatePickers[1]"/>
+                        <input type="text" class="form-control" datetime-picker="dd MMM yyyy HH:mm" ng-model="product.newProduct.bidEndTime" is-open="product.openDatePickers[1]"  />
                             <span class="input-group-btn">
                             <button class="btn btn-default" 
                                     ng-click="product.open($event,1)">
@@ -103,7 +98,6 @@
                         </div>
                     </div>
                 </div>
-                
                  <div class="form-group">
                     <label class="col-md-2 control-label">Description</label>
                     <div class="col-md-10">
