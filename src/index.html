@@ -1,8 +1,9 @@
 <!doctype html>
 <html ng-app="angulargen">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>angulargen</title>
+    <title>Online Auction Portal</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -18,13 +19,38 @@
     <!-- css files will be automatically insert here -->
     <!-- endinject -->
     <!-- endbuild -->
-  </head>
-  <body>
+</head>
+
+<body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <div ui-view></div>
+   <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" ng-click="navbarCollapsed=!navbarCollapsed" ng-init="navbarCollapsed=true">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" ><span class="glyphicon glyphicon-home"></span> Online Auction Portal</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar" uib-collapse="navbarCollapsed">
+      <ul class="nav navbar-nav">
+        <li ><a href="#">Home</a></li>
+         <li><a ng-href="#/about">Products</a></li>
+         <li><a ng-href="#/newSale">New Sale</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+        <div ui-view></div>
+    </div>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
@@ -42,5 +68,6 @@
     <!-- endinject -->
     <!-- endbuild -->
 
-  </body>
+</body>
+
 </html>
