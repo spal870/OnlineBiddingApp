@@ -23,6 +23,11 @@
                 , templateUrl: 'app/products/addNewSaleForm.html'
                 , controller: 'ProductController'
                 , controllerAs: 'product'
+            }).state('addNewBid', {
+                url: '/productBid'
+                , templateUrl: 'app/products/productBid.html'
+                , controller: 'ProductController'
+                , controllerAs: 'product'
             });
 
         $urlRouterProvider.otherwise('/');

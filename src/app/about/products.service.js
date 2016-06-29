@@ -7,7 +7,8 @@
 
     /** @ngInject */
     function productService($log, $http) {
-        var apiHost = 'http://10.209.41.33/AuctionWebApi/api';
+        //var apiHost = 'http://10.209.41.33/AuctionWebApi/api';
+        var apiHost = 'http://localhost:58167';
 
         var service = {
             apiHost: apiHost
@@ -20,7 +21,7 @@
 
         function getProducts() {
 
-            return $http.get(apiHost+"/product")
+            return $http.get(apiHost+"/api/product")
                 .then(getProductsComplete)
                 .catch(getProductsFailed);
 
@@ -40,6 +41,13 @@
             })
         }
         
+//        function createNewBid(newProduct){
+//            return $http.post(apiHost+"",newProduct).then(function(response){
+//                debugger;
+//                console.log("new bid created");
+//            })
+//        }
+//        
 
         function getDummyProducts() {
             var products = [{

@@ -1,0 +1,109 @@
+<div class="container">
+    <div>
+        <acme-navbar></acme-navbar>
+    </div>
+    <div class="jumbotron">
+        <form name="newSaleForm" class="form-horizontal" novalidate>
+            <fieldset>
+                <legend>Bid Product </legend>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Product Image</label>
+                                <div class="col-md-2 control-label">
+                                    <img ng-src="{{data.ProductImageUrl}}" alt="{{data.ProductImageUrl}}">
+                                    <!-- <span ng-bind="productimage"></span>-->
+                                </div>
+                                <span></span>
+                            </div>
+                        </td>
+                        <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="form-group" ng-class="{'has-error':newSaleForm.inputProductName.$touched &&         newSaleForm.inputProductName.$invalid}">
+                                        <label class="col-md-2 control-label" for="inputProductName">Product Name</label>
+                                        <div class="col-md-4">
+                                            <span ng-bind="productname">{{ data.ProductName }}</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Product Type</label>
+                                        <div class="col-md-4">
+                                            <span ng-bind="producttype">{{ data.ProductType }}</span>
+                                        </div>
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>          
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Description</label>
+                                        <div class="col-md-4">
+                                            <span ng-bind="productdescription">{{ data.ProductDescripiton }}</span>
+                                        </div>
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Starting Price</label>
+                                        <div class="col-md-4">
+                                            <span ng-bind="prodstartprice">{{ data.ProductPrice }}</span>
+                                        </div>
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Bid Start DateTime</label>
+                                        <div class="col-md-4">
+                                            <span ng-bind="bidstartdatetime">{{ data.ProductStartDateTime }}</span>
+                                        </div>
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Bid End DateTime</label>
+                                        <div class="col-md-4">
+                                           <span ng-bind="bidenddatetime">{{ data.ProductEndDateTime }}</span>
+                                        </div>
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <div class="col-md-4 col-md-offset-2">
+                                            <input type="text" name="bid">
+                                            <span>
+                                            <button class="btn btn-primary" style="width:80px;margin-right:10px" ng-click="product.createNewsale(product.newProduct)"
+                                                  ng-disabled="newSaleForm.$invalid"  >Bid</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+        </form>
+    </div>
+</div>
