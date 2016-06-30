@@ -22,7 +22,7 @@
                                required/>
                     </div>
                     <span class="help-block has-error">
-                        <span ng-show="newSaleForm.inputProductName.$error.required">
+                        <span ng-show="newSaleForm.inputProductName.$touched && newSaleForm.inputProductName.$error.required">
                             Product name is required.
                         </span>
                           <span ng-show="newSaleForm.inputProductName.$error.minlength"> 
@@ -51,7 +51,7 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label">Starting Price</label>
                     <div class="col-md-4">
-                        <input class="form-control" type="number" id="inputBidBasePrice" name="inputBidBasePrice" placeholder="0.0" required ng-model="product.newProduct.productPrice"/>
+                        <input class="form-control" type="number" id="inputBidBasePrice" name="inputBidBasePrice" placeholder="0.0" required ng-model="product.newProduct.productPrice" required/>
                     </div>
                     <span></span>
                 </div>
@@ -63,7 +63,7 @@
                                type="text" 
                                id="inputBidStartDateTime"   required 
                                ng-model="product.newProduct.bidStartTime"
-                               datetime-picker="dd MMM yyyy h:mm" 
+                               datetime-picker="dd MMM yyyy HH:mm" 
                                is-open="product.openDatePickers[0]"/>
                             <span class="input-group-btn">
                             <button class="btn btn-default" 
@@ -88,7 +88,7 @@
                     <label class="col-md-2 control-label">Bid End DateTime</label>
                     <div class="col-md-4">
                         <div class="input-group">
-                        <input type="text" class="form-control" datetime-picker="dd MMM yyyy HH:mm" ng-model="product.newProduct.bidEndTime" is-open="product.openDatePickers[1]"  />
+                        <input type="text" class="form-control" datetime-picker="dd MMM yyyy HH:mm" ng-model="product.newProduct.bidEndTime" is-open="product.openDatePickers[1]"  required/>
                             <span class="input-group-btn">
                             <button class="btn btn-default" 
                                     ng-click="product.open($event,1)">
@@ -101,7 +101,7 @@
                  <div class="form-group">
                     <label class="col-md-2 control-label">Description</label>
                     <div class="col-md-10">
-                        <textarea class="form-control"  id="inputProductDescription" name="inputProductDescription" placeholder="Description" ng-model="product.newProduct.productDescription" rows="3" ></textarea>
+                        <textarea class="form-control"  id="inputProductDescription" name="inputProductDescription" placeholder="Description" ng-model="product.newProduct.productDescription" rows="3" required></textarea>
                     </div>
                     <span></span>
                 </div>
@@ -109,7 +109,7 @@
                     <div class="col-md-4 col-md-offset-2">
                         <span>
                         <button class="btn btn-primary" style="width:80px;margin-right:10px" ng-click="product.createNewsale(product.newProduct)"
-                              ng-disabled="newSaleForm.$invalid"  >Create</button>
+                               ng-disabled="newSaleForm.$invalid" >Create</button>
                         </span>
                         <span>
                         <button class="btn btn-default"

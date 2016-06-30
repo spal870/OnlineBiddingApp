@@ -38,9 +38,9 @@
     <div class="collapse navbar-collapse" id="myNavbar" uib-collapse="navbarCollapsed">
       <ul class="nav navbar-nav">
         <li ><a href="#">Home</a></li>
-         <li><a ng-href="#/about">Products</a></li>
-         <li><a ng-href="#/newSale">New Sale</a></li>
-           <li><a ng-href="#/productBid">Bid Product</a></li>
+         <li ng-class="{active:activetab=='/about'}"><a ng-href="#/about" >Products</a></li>
+         <li ng-class="{active:activetab=='/newSale'}"><a ng-href="#/newSale">New Sale</a></li>
+           <li ng-class="{active:activetab=='/productBid'}"><a ng-href="#/productBid">Bid Product</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
