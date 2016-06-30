@@ -29,6 +29,13 @@
                     vm.openDatePickers[datePickerIndex] = true;
                 }
             };
+            
+            vm.productTypes=[{prodTypeId:1,prodTypeDescription:"Electronics"},
+                            {prodTypeId:2,prodTypeDescription:"Clothing"},
+                            {prodTypeId:3,prodTypeDescription:"Sports"},
+                            {prodTypeId:4,prodTypeDescription:"Furniture"}]
+                
+            
         }
 
     }

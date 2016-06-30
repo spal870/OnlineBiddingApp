@@ -8,7 +8,7 @@
     /** @ngInject */
     function productService($log, $http) {
         //var apiHost = 'http://10.209.41.33/AuctionWebApi/api';
-        var apiHost = 'http://10.209.233.37/auctionapi';
+        var apiHost = 'http://10.209.233.37/acutionapi';
 
         var service = {
             apiHost: apiHost
@@ -35,14 +35,15 @@
         
         function createNewSale(newProduct){
             var newSale={
-                name:newProduct.productName,
-                description:newProduct.productDescription,
-                imageURL:newProduct.productImage,
-                startPrice:newProduct.productPrice,
-                startTime:newProduct.bidStartTime,
-                endTime:newProduct.bidEndTime
+                ProductName:newProduct.productName,
+                ProductDescription:newProduct.productDescription,
+                ProductImageUrl:newProduct.productImage,
+                BidBasePrice:newProduct.productPrice,
+                BidStartDateTime:newProduct.bidStartTime,
+                BidEndDateTime:newProduct.bidEndTime,
+                ProductTypeId:newProduct.productType.prodTypeId
             };
-            return $http.post("http://10.209.233.37/auctionapi/Api/product",JSON.stringify(newSale)).then(function(response){
+            return $http.post("http://10.209.233.37/acutionapi/Api/product",JSON.stringify(newSale)).then(function(response){
                 debugger;
                 console.log("new sale created");
             })
