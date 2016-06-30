@@ -25,7 +25,7 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-   <nav class="navbar navbar-default" style="background-color:skyblue">
+  <nav class="navbar navbar-default" >
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" ng-click="navbarCollapsed=!navbarCollapsed" ng-init="navbarCollapsed=true">
@@ -37,10 +37,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" uib-collapse="navbarCollapsed">
       <ul class="nav navbar-nav">
-        <li ><a href="#">Home</a></li>
-         <li ng-class="{active:activetab=='/about'}"><a ng-href="#/about" >Products</a></li>
-         <li ng-class="{active:activetab=='/newSale'}"><a ng-href="#/newSale">New Sale</a></li>
-           <li ng-class="{active:activetab=='/productBid'}"><a ng-href="#/productBid">Bid Product</a></li>
+        <li  ng-class="{active:vm.isActive('/')}"><a href="#">Home</a></li>
+         <li ng-class="{active:vm.isActive('/about')}"><a ng-href="#/about" >Products</a></li>
+         <li ng-class="{active:vm.isActive('/newSale')}"><a ng-href="#/newSale">New Sale</a></li>
+           <li ng-class="{active:vm.isActive('/productBid')}"><a ng-href="#/productBid">Bid Product</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
