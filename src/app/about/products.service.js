@@ -8,7 +8,7 @@
     /** @ngInject */
     function productService($log, $http) {
         //var apiHost = 'http://10.209.41.33/AuctionWebApi/api';
-        var apiHost = 'http://localhost:58167';
+        var apiHost = 'http://10.209.233.37/auctionapi';
 
         var service = {
             apiHost: apiHost
@@ -42,7 +42,7 @@
                 startTime:newProduct.bidStartTime,
                 endTime:newProduct.bidEndTime
             };
-            return $http.post("http://10.209.18.233:9001/sales",JSON.stringify(newSale)).then(function(response){
+            return $http.post("http://10.209.233.37/auctionapi/Api/product",JSON.stringify(newSale)).then(function(response){
                 debugger;
                 console.log("new sale created");
             })

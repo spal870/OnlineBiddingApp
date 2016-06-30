@@ -7,19 +7,21 @@
 
     /** @ngInject */
     function routerConfig($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/');
         $stateProvider
-            .state('home', {
-                url: '/home'
+        .state('welcome', {
+                url: '/'
                 , templateUrl: 'app/main/main.html'
                 , controller: 'MainController'
                 , controllerAs: 'main'
-            }).state('about', {
+            })
+            .state('about', {
                 url: '/about'
                 , templateUrl: 'app/about/about.html'
                 , controller: 'AboutController'
                 , controllerAs: 'about'
             }).state('login', {
-                url : '/',
+                url : '/login',
                 templateUrl  : 'app/login/login.html',
                 controller   : 'LoginController',
                 controllerAs : 'vm'
@@ -40,7 +42,7 @@
                 , controllerAs: 'product'
             });
 
-        $urlRouterProvider.otherwise('/');
+       
 
     }
 
