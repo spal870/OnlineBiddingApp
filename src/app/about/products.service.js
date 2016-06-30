@@ -6,7 +6,7 @@
         .factory('productService', productService);
 
     /** @ngInject */
-    function productService($log, $http) {
+    function productService($log, $http,toastr) {
         //var apiHost = 'http://10.209.41.33/AuctionWebApi/api';
         var apiHost = 'http://10.209.233.37/acutionapi';
 
@@ -45,7 +45,11 @@
             };
             return $http.post("http://10.209.233.37/acutionapi/Api/product",JSON.stringify(newSale)).then(function(response){
                 debugger;
+                toastr.success("New Sale Created!",{timeOut:7000});
                 console.log("new sale created");
+            },function(error){
+                 toastr.error("New Sale Creation Failed!",{timeOut:7000})
+                $log.error('XHR Failed for createNewSale.\n' + angular.toJson(error.data, true));
             })
         }
         

@@ -8,7 +8,7 @@
         <form name="newSaleForm" class="form-horizontal" novalidate>
             <fieldset>
                 <legend>Add Product </legend>
-                <div class="form-group" ng-class="{'has-error':newSaleForm.inputProductName.$touched &&         newSaleForm.inputProductName.$invalid}">
+                <div class="form-group" ng-class="{'has-error':newSaleForm.inputProductName.$dirty &&         newSaleForm.inputProductName.$invalid}">
                     <label class="col-md-2 control-label" for="inputProductName">Product Name</label>
                     <div class="col-md-4">
                         <input class="form-control"
@@ -22,7 +22,7 @@
                                required/>
                     </div>
                     <span class="help-block has-error">
-                        <span ng-show="newSaleForm.inputProductName.$touched && newSaleForm.inputProductName.$error.required">
+                        <span ng-show="newSaleForm.inputProductName.$dirty && newSaleForm.inputProductName.$error.required">
                             Product name is required.
                         </span>
                           <span ng-show="newSaleForm.inputProductName.$error.minlength"> 
@@ -40,7 +40,7 @@
                     </div>
                     <span></span>
                 </div>
-                <div class="form-group" ng-class="{'has-error':newSaleForm.inputProductType.$touched &&         newSaleForm.inputProductType.$invalid}">
+                <div class="form-group" ng-class="{'has-error':newSaleForm.inputProductType.$dirty &&         newSaleForm.inputProductType.$invalid}">
                     <label class="col-md-2 control-label">Product Type</label>
                     <div class="col-md-4">
 <!--                        <input class="form-control" type="text" id="inputProductType" name="inputProductType" placeholder="Mention/Select Product Type" required  ng-model="product.newProduct.productType"/>-->
@@ -50,7 +50,7 @@
                        
                     </div>
                     <span class="help-block has-error">
-                     <span ng-show="newSaleForm.inputProductType.$touched && newSaleForm.inputProductType.$error.required">Select Product Type</span>
+                     <span ng-show="newSaleForm.inputProductType.$dirty && newSaleForm.inputProductType.$error.required">Select Product Type</span>
                     </span>
                 </div>
                

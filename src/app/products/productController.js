@@ -2,7 +2,7 @@
     angular.module('angulargen')
         .controller('ProductController', ProductController);
 
-    function ProductController(productService) {
+    function ProductController(productService,toastr) {
         var vm = this;
         vm.title = 'ProductController';
 
@@ -12,7 +12,12 @@
 
 
             vm.createNewsale = function (newProduct) {
-                productService.createNewSale(newProduct);
+                productService.createNewSale(newProduct).then(function(){
+                    //toastr.success("New Sale Created!");
+                    //vm.newProduct={};
+                },function(){
+                   // toastr.error("New Sale Creation Failed!")
+                });
             }
             vm.reset = function () {
                 vm.newProduct = {};
